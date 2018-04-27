@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>热点排名</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let record of ethHotSrvc.records" (click)="OnItemTapped(record)">
+      <h2>{{record[2]}}({{record[1]}}ETH)</h2>
+    </button>
+  </ion-list>
+
+</ion-content>

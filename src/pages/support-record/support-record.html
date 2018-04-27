@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>热点排名</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="ethHotSrvc.coinbase">
+    <ion-list>
+      <button ion-item *ngFor="let record of ethHotSrvc.records">
+        <h2>{{record[2]}}({{record[1]}}ETH)</h2>
+        <button *ngIf="ethHotSrvc.coinbase" ion-button clear item-end (click)="OnSupportClick(record)">支持</button>
+      </button>
+    </ion-list>
+  </div>
+
+  <div *ngIf="!ethHotSrvc.coinbase">
+    <h1>需要支付 ETH</h1>
+    <hr/>
+    <ion-label>推荐在电脑端使用：</ion-label>
+    <a href="https://metamask.io/" target="_blank">
+      <img src="../../assets/imgs/metamask-logo.png">
+    </a>
+    <br>
+    <ion-label>在手机端使用：</ion-label>
+    <a href="https://trustwalletapp.com/" target="_blank">
+      <img src="../../assets/imgs/trust-browser-logo.png">
+    </a>
+    <a href="https://www.cipherbrowser.com/" target="_blank">
+      <img src="../../assets/imgs/cipher-logo-black-text.png">
+    </a>
+  </div>
+
+</ion-content>

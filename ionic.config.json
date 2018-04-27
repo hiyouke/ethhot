@@ -1,0 +1,8 @@
+{
+  "name": "one_eth_hot_app",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
